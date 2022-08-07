@@ -1,0 +1,63 @@
+{% extends "index.html" %} 
+{% block title %} Sign up {% endblock %} 
+{% block content%}
+    {% with mail_count = mail_count %}
+        {% include "house.html" %}
+    {% endwith %}
+    <div class="chat-textbox" id="chat_div">
+        <textarea style="width: 90%; resize: none;" rows="1" id="textbox"></textarea>
+        <button onclick="send_message();">send</button>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js" integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA==" crossorigin="anonymous"></script>
+    <script>
+        var socket = io();
+        var textbox = document.getElementById("textbox");
+        var chat_div = document.getElementById("chat_div");
+        var room_buttons = document.getElementById("room_buttons");
+        var chatroom = document.getElementById("chatroom")
+
+        window.onload = function(){
+            draw_canvas("myCanvas");
+            toggle_chatbox(false);
+            resize_phone(window.innerWidth);
+            
+        };
+
+        socket.on('message', function(data){
+            console.log(data.username + " : " + data.msg + '\n')
+            chatroom.value += data.username + ' : '+ data.msg + '\n';
+        });
+
+        socket.on('joined', function(data){
+            chatroom.value += data.username + ' has joined the chat' + '\n';
+            console.log("Joined", socket.id, socket.rooms, data['room']);
+        });
+
+        function join_chatroom(room){
+            let data = {"username": "{{name}}", "room": room};
+            console.log(data);
+            socket.emit('join', data);
+            toggle_chatbox(true);
+        };
+    
+        function send_message(room) {
+            let data = {'username': '{{name}}','msg': textbox.value, 'room': socket.rooms}
+            console.log("{{name}}:", textbox.value);
+            console.log(socket.rooms +'test');
+            socket.emit('text');
+            textbox.value = "";
+        };
+
+        function toggle_chatbox(bool){ 
+            if (bool == true){
+                chat_div.style.display = 'block';
+                room_buttons.style.display = 'none';
+            }
+            else {
+                chat_div.style.display = 'none';
+                room_buttons.style.display = 'block';
+            };
+        };
+    </script>
+</div>
+{% endblock %}

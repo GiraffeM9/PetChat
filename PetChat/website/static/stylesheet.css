@@ -1,0 +1,192 @@
+body {
+    margin: 0;
+    font-family: Lucida Console;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	  background-size: 400% 400%;
+	  animation: gradient 15s ease infinite;
+	  height: 100vh;
+
+  }
+  
+  .topnav {
+    overflow: hidden;
+    background-color: #5626c7;
+    margin: 3px;
+  }
+  
+  .logo{
+    display: block;
+    color: #ffffff;
+    text-align: center;
+    padding: 0px 0px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  .logonav {
+    float: left;
+    display: block;
+    margin: 3px;
+  }
+
+  .topnav a {
+    float: left;
+    display: block;
+    color: #ffffff;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  .topnav a.active {
+    background-color: #4493ed;
+    color: white;
+  }
+  
+  .topnav .icon {
+    display: none;
+  }
+  
+  @media screen and (max-width: 600px) {
+    .topnav a:not(:first-child) {display: none;}
+    .topnav a.icon {
+      float: right;
+      display: block;
+    }
+  }
+  
+  @media screen and (max-width: 600px) {
+    .topnav.responsive {position: relative;}
+    .topnav.responsive .icon {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    .topnav.responsive a {
+      float: none imporant !important;
+      display: block;
+      text-align: left;
+    }
+  }
+
+  h1, h2, h3, h4, h5, label, a, i, li, ul{
+      color:#ffffff
+  }
+
+  .centered {
+    position: fixed;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .chat-textbox {
+    position: fixed;
+    width: 70%;
+    left: 15%;
+    bottom: 5.5%;
+    float: left;
+  }
+
+  .main-canvas {
+    border: 1px solid;
+    width: 75%;
+    color: #ffffff;
+    image-rendering: pixelated;
+  }
+
+  input[type=text], input[type=password]{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  input[type=submit] {
+    width: 100%;
+    background-color: #6020f5;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #6020f5;
+  }
+
+  .form-group {
+      margin: 10px;
+  }
+
+  button {
+    font-family: Lucida Console;
+  }
+
+  .form-button {
+    padding: 8px 20px;
+    background-color: #6020f5;
+    border: 1px solid;
+    border-radius: 4px;
+    border-color:#ffffff;
+  }
+
+  .phone-ui{
+    float: left;
+    text-align: center;
+    margin: 2%;
+    padding: 1.5%;
+    background: none;
+  }
+
+  .phone {
+    height: 120px;
+    width: 250px;
+    border: 5px solid;
+    background-color: rgb(84, 146, 232);
+    position: fixed;
+    top: 81%;
+    left: 75%;
+    transform: translate(-50%, -50%);
+  }
+
+  .mini-phone {
+    top: 81%;
+    left: 75%;
+    transform: translate(-50%, -50%);
+    position: fixed;
+  }
+
+  .phone-edges {
+    height: 120px;
+    width: 300px;
+    border: 5px solid;
+    background-color: rgb(30, 37, 46);
+    position: fixed;
+    top: 81%;
+    left: 75%;
+    transform: translate(-50%, -50%);
+  }
+
+  a:hover {
+      color:#0004ff;
+  }
+
+  .username-sign_up {
+      width: 94.3% !important;
+  }
+
+  .house {
+    position: fixed;
+    width: 75%;
+  }

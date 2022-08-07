@@ -1,0 +1,56 @@
+{% extends "index.html" %} 
+{% block title %} Sign up {% endblock %} 
+{% block content%}
+<form method="POST">
+    <h3 align="center">Sign Up</h3>
+    <div class="form-group">
+      <br>
+      <label for="email">Email Address</label>
+      <input
+        type="text"
+        id="email"
+        name="email"
+        class="form-control"
+        placeholder="Enter email"
+      />
+      <label for="username">Username</label>
+      <div>
+        <input
+            type="text"
+            id="username"
+            name="username"
+            class="form-control username-sign_up"
+            placeholder="Enter username"
+        />
+        <button class="dice form-button"><i class="fas fa-dice" onclick="randomise_username()"></i></button>
+      </div>
+      <label for="password1">Password</label>
+      <input
+        type="text"
+        id="password1"
+        name="password1"
+        class="form-control"
+        placeholder="Enter password"
+      />
+      <label for="password2">Password Again</label>
+      <input
+        type="text"
+        id="password2"
+        name="password2"
+        class="form-control"
+        placeholder="Enter password again"
+      />
+      <br/>
+      <div align="center">
+          <button type="submit" class="form-button">Sign Up</button>
+          <p>Already have an account? <a href="/login">Sign in</a></p>
+      </div>
+    </div>
+  </form>
+
+  <script>
+      function randomise_username(){
+        
+      }
+  </script>
+{% endblock %}

@@ -1,0 +1,41 @@
+<img src="../static/images/Daisy.png" style="display: none;" id="Daisy_img">
+<img src="../static/images/Moonlight.png" style="display: none;" id="Moonlight_img">
+<img src="../static/images/pet_house.png" style="display: none;" id="pet_house_img">
+<div class="house">
+  <canvas id="myCanvas" class="main-canvas centered"></canvas>
+  <div id="mini_phone" style="display: none;">
+    <img src="../static/images/mini-phone.png">
+</div>
+  <div id="phone">
+    <div class="phone-edges"></div>
+    <div class="phone">
+      <div class="phone-ui">
+        <p id="clock">00:00</p>
+        <p>2nd july</p>
+      </div>
+      <div class="phone-ui">
+        <p>
+          <button class="phone-ui">Messages&#x2709;[{{ mail_count }}]</button>
+        </p>
+        <p>
+          <button class="phone-ui">MyPetMaps ☆☆</button>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+    var phone = document.getElementById('phone')
+    var mini_phone = document.getElementById('mini_phone')
+    window.onresize = function(){
+        if (window.innerWidth < 1075){
+            phone.style.display = 'none';
+            mini_phone.style.display = 'block';
+        }
+        else {
+            phone.style.display = 'block';
+            mini_phone.style.display = 'none';
+            
+        }
+    };
+</script>
