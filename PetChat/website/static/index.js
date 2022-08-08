@@ -55,3 +55,13 @@ function resize_phone(width){
         mini_phone.style.display = 'none';
     };
 };
+
+function toggle_footer(id){
+    var footer = document.getElementById(id);
+    if (footer.style.display != 'none'){
+        footer.style.display = 'block';
+    }
+    else {
+        footer.style.display = 'none';
+    };
+};

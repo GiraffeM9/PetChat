@@ -8,6 +8,7 @@ body {
 
   }
   
+  /* Navigation bar ------------------------------------------*/
   .topnav {
     overflow: hidden;
     background-color: #5626c7;
@@ -74,6 +75,7 @@ body {
     }
   }
 
+  /*---------------------------------------------------------------------------*/
   h1, h2, h3, h4, h5, label, a, i, li, ul{
       color:#ffffff
   }
@@ -189,4 +191,30 @@ body {
   .house {
     position: fixed;
     width: 75%;
+  }
+
+  /* Newsletter -----------------------------------------------*/
+
+  .newsletter-segment {
+    margin: 3px;
+    border: 1.5px solid;
+    border-color: white;
+  }
+
+  .newsletter-segment p{
+    color: white;
+  }
+
+  .newsletter-segment button{
+    padding: 8px 20px;
+    margin: 3px;
+    background-color: #6020f5;
+    border: 1px solid;
+    border-color:#ffffff;
+    color: white;
+  }
+
+  .newsletter-segment button:hover{
+    color: #0004ff;
+    background-color: white;
   }

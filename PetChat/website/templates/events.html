@@ -1,0 +1,18 @@
+{% extends "index.html" %} 
+{% block title %} Sign up {% endblock %} 
+{% block content%}
+<div>
+    <br>
+    <br>
+    <br>
+    <h1><center><u>Events</u></center></h1>
+    {% for n in range(1, events + 1) %}
+    <div class="newsletter-segment" id="{{n}}">
+        <p>
+            {{news_content}}
+        </p>
+        <button>Read More ></button>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

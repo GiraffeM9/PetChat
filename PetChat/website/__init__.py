@@ -27,7 +27,7 @@ def create_app():
     app.register_blueprint(auth, url_prefix="/")
     app.register_blueprint(views, url_prefix="/")
 
-    create_db(app, ["LizardTown", "RetrieverCity", "PetAvenue"])
+    create_db(app)
 
     login_manager = LoginManager()
     login_manager.login_view = "auth.login"
@@ -44,14 +44,7 @@ def create_app():
 
     return app, socketio
 
-def create_db(app, worlds):
+def create_db(app):
     if not path.exists(f"website/{DB_NAME}"):
         db.create_all(app=app)
-        create_worlds(worlds)
         print("Created database")
-
-    def create_worlds(worlds):
-        from .models import World
-        for world_name in worlds:
-            World(world_id = generate_id(), world_name = world_name, 
-            users_active = 0, capactiy = 1000, full = False)
