@@ -218,3 +218,7 @@ body {
     color: #0004ff;
     background-color: white;
   }
+
+  footer{
+    display: block;
+  }

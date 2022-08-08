@@ -42,8 +42,10 @@
       </a>
     </div>
     <div>{% block content %}{% endblock %}</div>
-    <footer id="footer">
-      <a href="#top">Back to the top</a>
+    <footer>
+      <br>
+      <br>
+      <a href="#top" id="footer">Back to the top</a>
     </footer>
     <script>
       function responsive_nav(){
@@ -56,7 +58,17 @@
       };
       
       function close_message(){
-          document.getElementById("message").style.display = "none";
+        document.getElementById("message").style.display = "none";
+      };
+
+      function toggle_footer(visible){
+        var footer = document.getElementById("footer");
+        if (visible == true){
+            footer.style.display = 'none';
+        }
+        else {
+            footer.style.display = 'block';
+        };
       };
     </script>
     <script src="../static/index.js"></script>

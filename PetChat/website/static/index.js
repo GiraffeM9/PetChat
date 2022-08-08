@@ -45,23 +45,3 @@ function update(t) {
     }
 };
 
-function resize_phone(width){
-    if (width < 1075){
-        phone.style.display = 'none';
-        mini_phone.style.display = 'block';
-    }
-    else {
-        phone.style.display = 'block';
-        mini_phone.style.display = 'none';
-    };
-};
-
-function toggle_footer(id){
-    var footer = document.getElementById(id);
-    if (footer.style.display != 'none'){
-        footer.style.display = 'block';
-    }
-    else {
-        footer.style.display = 'none';
-    };
-};
