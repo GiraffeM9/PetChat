@@ -27,15 +27,20 @@
 <script>
     var phone = document.getElementById('phone')
     var mini_phone = document.getElementById('mini_phone')
-    window.onresize = function(){
-        if (window.innerWidth < 1075){
+    function toggle_phone(){
+      if (window.innerWidth < 1075){
             phone.style.display = 'none';
             mini_phone.style.display = 'block';
+            mini_phone.style.class = 'mini-phone';
         }
-        else {
+      else {
             phone.style.display = 'block';
             mini_phone.style.display = 'none';
+            mini_phone.style.class = '';
             
-        }
+        };
+    };
+    window.onresize = function(){
+      toggle_phone();
     };
 </script>
