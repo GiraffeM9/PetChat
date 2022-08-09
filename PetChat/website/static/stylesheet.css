@@ -7,6 +7,11 @@ body {
 	  height: 100vh;
 
   }
+
+  #page-container {
+    position: relative;
+    min-height: 100vh;
+  }
   
   /* Navigation bar ------------------------------------------*/
   .topnav {
@@ -221,4 +226,8 @@ body {
 
   footer{
     display: block;
+    margin: 2px;
+    border-top: 1.5px solid white;
+    background-color: rgba(0, 0, 0, .1);
+
   }
