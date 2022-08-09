@@ -156,6 +156,10 @@ body {
     background: none;
   }
 
+  .phone-ui button:hover{
+    color: #0004ff;
+    background-color: white;
+  }
   .phone {
     height: 120px;
     width: 250px;
@@ -231,3 +235,4 @@ body {
     background-color: rgba(0, 0, 0, .1);
 
   }
+
