@@ -26,6 +26,10 @@ function minigame(ctx, pet){
     console.log(test);
 };
 
+function messages(ctx, pet){
+    console.log(test);
+};
+
 function Time() {
     var date = new Date();
     var hour = date.getHours();

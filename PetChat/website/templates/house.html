@@ -3,7 +3,7 @@
 <img src="../static/images/pet_house.png" style="display: none;" id="pet_house_img">
 <div class="house">
   <canvas id="myCanvas" class="main-canvas centered"></canvas>
-  <div id="mini_phone" style="display: none;">
+  <div id="mini_phone" class="mini-phone">
     <img src="../static/images/mini-phone.png">
 </div>
   <div id="phone">
@@ -31,7 +31,6 @@
       if (window.innerWidth < 1075){
             phone.style.display = 'none';
             mini_phone.style.display = 'block';
-            mini_phone.style.class = 'mini-phone';
         }
       else {
             phone.style.display = 'block';
@@ -40,6 +39,7 @@
             
         };
     };
+
     window.onresize = function(){
       toggle_phone();
     };
