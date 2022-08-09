@@ -151,8 +151,8 @@ body {
   .phone-ui{
     float: left;
     text-align: center;
-    margin: 2%;
-    padding: 1.5%;
+    margin: 0.5%;
+    padding: 1.2%;
     background: none;
   }
 
@@ -161,7 +161,7 @@ body {
     background-color: white;
   }
   .phone {
-    height: 120px;
+    height: 122px;
     width: 250px;
     border: 5px solid;
     background-color: rgb(84, 146, 232);
@@ -178,8 +178,12 @@ body {
     position: fixed;
   }
 
+  .mini-phone :hover {
+    transform: scale(1.1);
+  }
+
   .phone-edges {
-    height: 120px;
+    height: 122px;
     width: 300px;
     border: 5px solid;
     background-color: rgb(30, 37, 46);
