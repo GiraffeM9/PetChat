@@ -1,6 +1,7 @@
 var test = "test message";
 
 function draw_canvas(canvas_id){
+    // main game screen
     var canvas = document.getElementById(canvas_id);
     var ctx = canvas.getContext("2d");
     var heightRatio = 0.5;
