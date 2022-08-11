@@ -1,4 +1,4 @@
-# main app - file runs the whole website backend
+# main app - file runs the whole website
 from website import create_app
 
 
