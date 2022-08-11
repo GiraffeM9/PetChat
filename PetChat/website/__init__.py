@@ -16,9 +16,11 @@ app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}'
 socketio = SocketIO(app, manage_session=False)
 
 def page_not_found(e):
+    # error handling page
   return render_template('404.html'), 404
 
 def create_app():
+    # initialises application
     db.init_app(app)
 
     from .models import User
@@ -38,6 +40,7 @@ def create_app():
     def load_user(id):
         return User.query.get(int(id))
 
+    # loads socketio events to communicate with javascript socketio events
     from .events import on_leave, on_join, on_message
     
     app.register_error_handler(404, page_not_found)
@@ -45,6 +48,7 @@ def create_app():
     return app, socketio
 
 def create_db(app):
+    # checks if database exists already, if not creates one
     if not path.exists(f"website/{DB_NAME}"):
         db.create_all(app=app)
         print("Created database")

@@ -1,4 +1,5 @@
-# Models created via sqlalchemy, flask_login to allow the User model to be loaded into cookies
+# Database Models created via sqlalchemy, 
+# flask_login to allow the User model to be loaded into cookies
 
 from sqlalchemy import ForeignKey
 from . import db 

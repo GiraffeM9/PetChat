@@ -17,6 +17,7 @@ def login():
         password = request.form.get("password")
 
         user = User.query.filter_by(username=username).first()
+        # checks database to see if user exists
         if user:
             if check_password_hash(user.password, password):
                 #flash('Logged in!', category='success')
@@ -36,15 +37,18 @@ def sign_up():
         username = request.form.get("username")
         password1 = request.form.get("password1")
         password2 = request.form.get("password2")
-    
+
+        # check if email/username already exists 
         email_exists = User.query.filter_by(email=email).first()
         username_exists = User.query.filter_by(username=username).first()
         if email_exists:
             flash('Email is already in use.', category='error')
         elif username_exists:
             flash('Username already exists.', category='error')
+        # double check password input
         elif password1 != password2:
             flash('Password does not match.', category='error')
+        # validation of username/password/email
         elif len(username) < 2:
             flash('Username is too short.', category='error')
         elif len(password1) < 6:
@@ -52,6 +56,7 @@ def sign_up():
         elif len(email) < 4:
             flash("Email is invalid.", category='error')
         else:
+            # if login details are valid to create an account
             new_user = User(id = generate_id(), email=email, username=username, password=generate_password_hash(password1, method='sha256'))
             db.session.add(new_user)
             db.session.commit()

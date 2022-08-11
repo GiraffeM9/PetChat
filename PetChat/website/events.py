@@ -6,6 +6,7 @@ from flask import request
 
 @socketio.on('join')
 def on_join(data):
+    # joining a room
     room = data['room']
     if room != "request.sid":
         print(room)
@@ -16,6 +17,7 @@ def on_join(data):
 
 @socketio.on('text')
 def on_message(data):
+    # sending a message
     room = data[room]
     if room == "request.sid":
         room = request.sid
@@ -23,6 +25,7 @@ def on_message(data):
 
 @socketio.on('leave')
 def on_leave(data):
+    # leaving a room
     username = data['username']
     room = data['room']
     leave_room(room)
