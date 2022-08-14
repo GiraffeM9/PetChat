@@ -17,6 +17,7 @@ class Chatroom(db.Model):
 class Chat(db.Model):
     __tablename__ = 'Chat'
     chat_id = db.Column(db.Integer, primary_key=True, unique=True)
+    timestamp = db.Column(db.DateTime(timezone=True), default=func.now())
     #user_a = db.Column()
 
 
