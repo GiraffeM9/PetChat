@@ -6,6 +6,13 @@ from . import db
 from flask_login import UserMixin
 from sqlalchemy.sql import func
 
+class Pet(db.Model):
+    __tablename__ = 'Pet'
+    pet_id = db.Column(db.Integer, primary_key=True, unique=True)
+    hunger = db.Column(db.Integer)
+    energy = db.Column(db.Integer)
+    cleanliness = db.Column(db.Integer)
+
 
 class Chatroom(db.Model):
     __tablename__ = 'Chatroom'
