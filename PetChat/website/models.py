@@ -13,12 +13,18 @@ class Chatroom(db.Model):
     room_name = db.Column(db.String(20), unique=True)
     capacity = db.Column(db.Integer)
     full = db.Column(db.Boolean)
+    chat_members_id = db.Column(db.Integer, primary_key=True, unique=True)
+
 
 class Chat(db.Model):
     __tablename__ = 'Chat'
     chat_id = db.Column(db.Integer, primary_key=True, unique=True)
     timestamp = db.Column(db.DateTime(timezone=True), default=func.now())
     #user_a = db.Column()
+
+
+class Chat_Members(db.Model):
+    pass
 
 
 class User(db.Model, UserMixin):
@@ -45,3 +51,7 @@ class Inventory(db.Model):
     amount = db.Column(db.Integer)
 
 
+class Leaderboard(db.Model):
+    __tablename__ = 'Leaderboard'
+    position = db.Column(db.Integer)
+    #user_id = 
