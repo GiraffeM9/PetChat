@@ -30,8 +30,8 @@ class Chat(db.Model):
     #user_a = db.Column()
 
 
-class Chat_Members(db.Model):
-    pass
+#class Chat_Members(db.Model):
+#   pass
 
 
 class User(db.Model, UserMixin):
@@ -60,5 +60,5 @@ class Inventory(db.Model):
 
 class Leaderboard(db.Model):
     __tablename__ = 'Leaderboard'
-    position = db.Column(db.Integer)
+    position = db.Column(db.Integer, primary_key=True)
     #user_id = 

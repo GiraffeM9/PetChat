@@ -1,51 +1,60 @@
-<img src="../static/images/Daisy.png" style="display: none;" id="Daisy_img">
-<img src="../static/images/Moonlight.png" style="display: none;" id="Moonlight_img">
-<img src="../static/images/pet_house.png" style="display: none;" id="pet_house_img">
+<img src="../static/images/Daisy.png" style="display: none" id="Daisy_img" />
+<img src="../static/images/Moonlight.png" style="display: none" id="Moonlight_img" />
+
 <div class="house">
-  <canvas id="myCanvas" class="main-canvas centered"></canvas>
-  <div id="mini_phone" class="mini-phone">
-    <button style="border: none; background: none;">
-      <img src="../static/images/mini-phone.png">
+  <div id="mini_phone" class="mini-phone" onclick="open_phone();">
+    <button style="border: none; background: none">
+      <img src="../static/images/mini-phone.png" />
     </button>
-</div>
+  </div>
   <div id="phone">
     <div class="phone-edges"></div>
     <div class="phone">
       <div class="phone-ui">
         <p id="clock">00:00</p>
-        <p>2nd july</p>
+        <p id="date">testday testmonth</p>
+        <p>50 G</p>
       </div>
+
       <div class="phone-ui">
         <p>
-          <button class="phone-ui" onclick="messages();">Messages&#x2709;[{{ mail_count }}]</button>
+          <button class="phone-ui" onclick="messages();">
+            Messages&#x2709;[{{ mail_count }}]
+          </button>
         </p>
         <p>
-          <button class="phone-ui">PetMaps ☆☆☆</button>
+          <button class="phone-ui" onclick="run_minigame();">PetMaps ☆☆☆</button>
         </p>
         <p>
-          <button class="phone-ui">FitPet+ ☆☆☆</button>
+          <button class="phone-ui" onclick="pet_care()">FitPet+ ☆☆☆</button>
         </p>
       </div>
     </div>
   </div>
 </div>
-<script>
-    var phone = document.getElementById('phone')
-    var mini_phone = document.getElementById('mini_phone')
-    function toggle_phone(){
-      if (window.innerWidth < 1075){
-            phone.style.display = 'none';
-            mini_phone.style.display = 'block';
-        }
-      else {
-            phone.style.display = 'block';
-            mini_phone.style.display = 'none';
-            mini_phone.style.class = '';
-            
-        };
-    };
 
-    window.onresize = function(){
-      toggle_phone();
+<script>
+  var phone = document.getElementById("phone");
+  var mini_phone = document.getElementById("mini_phone");
+
+  window.onresize = function () {
+    toggle_phone();
+  };
+
+  function toggle_phone() {
+    if (window.innerWidth < 1075) {
+      phone.className = "hide";
+      mini_phone.clasName = "show";
+    }
+    else {
+      phone.className = "show";
+      mini_phone.className = "hide";
     };
+  };
+
+
+  function open_phone() {
+    console.log("test");
+  };
+
 </script>
