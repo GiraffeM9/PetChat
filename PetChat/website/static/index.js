@@ -1,22 +1,33 @@
+// javascript code for the majority of front end (game and game ui)
+
 var test = "test message";
 var canvas = document.getElementById("game_screen");
 var ctx = canvas.getContext("2d");
 var heightRatio = 0.5;
-var daisy = document.getElementById("Daisy_img");
 var moonlight = document.getElementById("Moonlight_img");
 var house = new Image();
 house.src = "http://127.0.0.1:5000/static/images/pet_house.png"
-
+var start_screen = new Image();
+start_screen.src = "http://127.0.0.1:5000/static/images/start_screen.png"
+const game_start_event = new Event('start_game');
 
 function home_screen(){
     // main game screen
+    phone_div.className = "show"
     canvas.height = canvas.width * heightRatio;
     ctx.fillStyle = "#4493ed";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-    draw_house(ctx, house);
+    draw_bg(ctx, house);
     draw_pet(ctx, moonlight);
     ctx.imageSmoothingEnabled = false;
+};
+
+function start_s(){
+    // prepares for minigamegame start screen
+    clear_screen();
+    ctx.drawImage(start_screen, 0, 0, 310, 150)
+    phone_div.className = "hide"
 };
 
 function clear_screen(){
@@ -25,7 +36,7 @@ function clear_screen(){
 };
 
 
-function draw_house(ctx, image){
+function draw_bg(ctx, image){
     ctx.drawImage(image, 0, 0);
 };
 
@@ -38,6 +49,7 @@ function messages(ctx, pet){
 };
 
 function update_clock() {
+    // manages in game clock
     var now = new Date();
     var months = ["January", "February", 
         "March", "April", "May", "June", "July", "August", "September", "October",

@@ -13,20 +13,30 @@
       <div class="phone-ui">
         <p id="clock">00:00</p>
         <p id="date">testday testmonth</p>
-        <p>50 G</p>
+        <p id="coins">50 G</p>
       </div>
 
       <div class="phone-ui">
         <p>
-          <button class="phone-ui" onclick="messages();">
+          <button id="maps1" class="phone-ui hide" onclick="start_s()">Start Walk(game)☆</button>
+        </p>
+        <p>
+          <button id="maps2" class="phone-ui hide" onclick="">Route > Pet Shop☆</button>
+        </p>
+        <p>
+          <button id="msg_btn" class="phone-ui" onclick="under_construction()">
             Messages&#x2709;[{{ mail_count }}]
           </button>
         </p>
         <p>
-          <button class="phone-ui" onclick="run_minigame();">PetMaps ☆☆☆</button>
+          <button id="petmaps" class="phone-ui" onclick="pet_maps()">PetMaps ☆☆☆</button>
         </p>
         <p>
-          <button class="phone-ui" onclick="pet_care()">FitPet+ ☆☆☆</button>
+          <button id="fitpet" class="phone-ui" onclick="pet_care()">FitPet+ ☆☆☆</button>
+        </p>
+        <p id="maps4" class="phone-ui hide">Under-Construct</p>
+        <p>
+          <button id="maps3" class="phone-ui hide" onclick="back()">< back</button>
         </p>
       </div>
     </div>
@@ -36,6 +46,11 @@
 <script>
   var phone = document.getElementById("phone");
   var mini_phone = document.getElementById("mini_phone");
+  var maps1 = document.getElementById("maps1");
+  var maps2 = document.getElementById("maps2");
+  var petmaps = document.getElementById("petmaps")
+  var fitpet = document.getElementById("fitpet")
+  var msg_btn = document.getElementById("msg_btn")
 
   window.onresize = function () {
     toggle_phone();
@@ -56,5 +71,43 @@
   function open_phone() {
     console.log("test");
   };
+
+  function pet_maps(){
+    maps1.className = "phone-ui show"
+    maps2.className = "phone-ui show"
+    maps3.className = "phone-ui show"
+    petmaps.className = "hide"
+    fitpet.className = "hide"
+    msg_btn.className = "hide"
+
+  };
+
+  function back(){
+    maps1.className = "phone-ui hide"
+    maps2.className = "phone-ui hide"
+    maps3.className = "phone-ui hide"
+    maps4.className = "phone-ui hide"
+    petmaps.className = "phone-ui show"
+    fitpet.className = "phone-ui show"
+    msg_btn.className = "phone-ui show"
+  }
+
+  function messages(){
+    phone.className = "hide";
+    mini_phone.clasName = "hide";
+
+    
+  }
+
+  function under_construction(){
+    maps1.className = "phone-ui hide"
+    maps2.className = "phone-ui hide"
+    maps3.className = "phone-ui show"
+    maps4.className = "phone-ui show"
+    petmaps.className = "hide"
+    fitpet.className = "hide"
+    msg_btn.className = "hide"
+
+  }
 
 </script>

@@ -3,6 +3,8 @@
 from flask import Blueprint, render_template, request
 from flask_login import login_required, current_user
 
+from .models import Leaderboard
+
 views = Blueprint("views", __name__)
 
 
@@ -25,9 +27,9 @@ def newsletter():
     return render_template("newsletter.html", name=current_user.username, mail_count=9, newsletters=5, news_content=news_content)
 
 
-@views.route("/events", methods=["GET", "POST"])
-def events():
-    # events information page
-    if request.method == 'POST':
-        pass
-    return render_template("events.html", name=current_user.username, mail_count=9, events=4)
+
+@views.route("/leaderboard")
+def leaderboard():
+    # leaderboard page
+    leaders = Leaderboard.query.order_by(Leaderboard.score.desc()).with_entities(Leaderboard.position, Leaderboard.score, Leaderboard.username).all()
+    return render_template("leaderboard.html", name=current_user.username, mail_count=9, leaders=leaders)

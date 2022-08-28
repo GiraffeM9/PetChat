@@ -33,6 +33,13 @@
         update_clock();
     };
 
+    document.addEventListener('keydown', function (e) {
+        if (e.keyCode == 88) {
+            clear_screen();
+            start_game();
+        };
+    });
+
     socket.on('message', function (data) {
         console.log(data.username + " : " + data.msg + '\n')
         chatroom.value += data.username + ' : ' + data.msg + '\n';
@@ -54,7 +61,7 @@
         let data = { 'username': '{{name}}', 'msg': textbox.value, 'room': socket.rooms }
         console.log("{{name}}:", textbox.value);
         console.log(socket.rooms + 'test');
-        socket.emit('text');
+        socket.emit('text', data);
         textbox.value = "";
     };
 
@@ -68,11 +75,10 @@
             //room_buttons.style.display = 'block';
         };
     };
-    function run_minigame(){
-        document.getElementById("game_screen").focus();
-        clear_screen();
-        start_game();
-        phone_div.innerHTML = ""
+
+    function update_leaderboard(score){
+        let data = {"username": "{{name}}", "score": score}
+        socket.emit('update_leaderboard')
     };
 </script>
 </div>

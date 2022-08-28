@@ -107,6 +107,12 @@ body {
     image-rendering: pixelated;
   }
 
+  .chat-screen{
+    border: 1px solid;
+    width: 75%;
+    color: #ffffff;
+  }
+
   input[type=text], input[type=password]{
     width: 100%;
     padding: 12px 20px;

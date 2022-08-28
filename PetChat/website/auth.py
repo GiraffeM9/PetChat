@@ -6,6 +6,7 @@ from .models import User
 from flask_login import login_user, logout_user, login_required, current_user
 from werkzeug.security import generate_password_hash, check_password_hash
 from .functions import *
+from .email_sender import send_email
 
 auth = Blueprint("auth", __name__)
 
@@ -58,9 +59,12 @@ def sign_up():
         else:
             # if login details are valid to create an account
             new_user = User(id = generate_id(), email=email, username=username, password=generate_password_hash(password1, method='sha256'))
+            send_email("Welcome to PetChat! *", [new_user], "Welcome to PetChat! Here is a 50c sign up bonus, play minigames and participate in events to earn more coins!")
+            send_email("Launch Event, ")
             db.session.add(new_user)
             db.session.commit()
             login_user(new_user, remember=True)
+        
             #flash('User created!')
             return redirect(url_for('views.home'))
 

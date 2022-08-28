@@ -1,17 +1,16 @@
 {% extends "index.html" %} 
-{% block title %} Sign up {% endblock %} 
+{% block title %} Leaderboard {% endblock %} 
 {% block content%}
 <div>
     <br>
     <br>
     <br>
-    <h1><center><u>Events</u></center></h1>
-    {% for n in range(1, events + 1) %}
+    <h1><center><u>Leaderboard</u></center></h1>
+    {% for n in leaders %}
     <div class="newsletter-segment" id="{{n}}">
         <p>
-            {{news_content}}
+            {{n}}
         </p>
-        <button>Read More ></button>
     </div>
     {% endfor %}
 </div>
